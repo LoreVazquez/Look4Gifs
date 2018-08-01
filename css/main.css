@@ -1,0 +1,14 @@
+.element{
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    display: block;
+    text-align: left;
+    position: relative;
+    margin: 2%;
+}
+
+#elements img {
+    max-width: 250px;
+    padding: 4px;
+}

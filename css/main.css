@@ -12,3 +12,8 @@
     max-width: 250px;
     padding: 4px;
 }
+
+.center{
+    text-align: center;
+    margin: 10px;
+}

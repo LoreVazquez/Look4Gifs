@@ -1,25 +1,22 @@
 $(document).ready(function(){
-    var drawGifs = function(data){
-        var gif = "";
-        var url = "";
+    const drawGifs = (data) => {
+ 
         data.forEach(ele => {
-            gif = ele.images.downsized_large.url;
-            console.log(gif)
-            url = ele.bitly_gif_url;
+            let gif = ele.images.downsized_large.url;
+            let url = ele.bitly_gif_url;
             $('#elements').append(armarTemplate(gif, url));
         });
     }
 
-
-    var armarTemplate = function(gif,url){
-        var t = `<div class= "element">
-                    <img src"${gif}" width="200px"/>
+    const armarTemplate = (gif,url) => {
+        let t = `<div class= "element">
+                    <img src="${gif}""/>
                     <a href= "${url}">Ver mas</a>
                 </div>`;
         return t;
     }
 
-    var ajaxGif = function(gif){
+    const ajaxGif = (gif) => {
         $.ajax({
             url: 'http://api.giphy.com/v1/gifs/search',
             type: 'GET',
@@ -41,7 +38,7 @@ $(document).ready(function(){
     $('#gif-search').click(function(event){
         console.log('Entro');
         $('#elements').empty();
-        var gif = $("#gif-text").val();
+        let gif = $("#gif-text").val();
         ajaxGif(gif);
     })
 });
